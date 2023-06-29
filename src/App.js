@@ -13,6 +13,7 @@ import {
   Outlet,
   RouterProvider,
 } from "react-router-dom";
+import Videoplayer from "./components/video-player/VideoPlayer";
 
 function App() {
   const router = createBrowserRouter(
@@ -24,6 +25,7 @@ function App() {
         <Route path="/quotegenerator" element={<QuoteGenerator />} />
         <Route path="shoppinglist" element={<ShoppingList />} />
         <Route path="github" element={<Github />} />
+        <Route path="videoplayer" element={<Videoplayer />} />
       </Route>
     )
   );
@@ -64,6 +66,9 @@ function Root() {
           </Link>
           <Link className="router-link" to="/github">
             Github User Search
+          </Link>
+          <Link className="router-link" to="/videoplayer">
+            Video Player
           </Link>
         </div>
       </div>

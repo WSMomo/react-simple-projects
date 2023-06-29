@@ -281,3 +281,31 @@
   padding: 10px;
   border-radius: 5px;
 }
+
+/* Video Player */
+.videoplayer-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--main-color);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.video-title {
+  color: var(--secondary-color);
+}
+.videoplayer-select {
+  cursor: pointer;
+  padding: 5px 10px;
+  border-radius: 5px;
+  background-color: var(--secondary-color);
+  color: var(--main-color);
+  outline: none;
+}
+
+.video {
+  margin-top: 30px;
+  border-radius: 8px;
+}
