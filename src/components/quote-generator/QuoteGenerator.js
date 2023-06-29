@@ -16,14 +16,15 @@ export default function QuoteGenerator() {
     fetchQuote();
   }, [newQuote]);
 
+  function handleNewQuote() {
+    setNewQuote(newQuote + 1);
+  }
+
   return (
     <div className="quote-container">
       <h2>{content}</h2>
       <h3 className="quote-generator-author">{author}</h3>
-      <button
-        className="quote-button"
-        onClick={() => setNewQuote(newQuote + 1)}
-      >
+      <button className="quote-button" onClick={handleNewQuote}>
         Generate Quote
       </button>
     </div>
