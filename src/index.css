@@ -106,6 +106,7 @@
   background-color: var(--main-color);
   padding: 20px;
   border-radius: 10px;
+  width: 350px;
 }
 
 .accordion-title {
@@ -115,7 +116,7 @@
 .accordion-faq {
   background-color: var(--secondary-color);
   margin-bottom: 10px;
-  padding: 10px 30px;
+  padding: 10px 5px;
   border-radius: 8px;
 }
 
@@ -124,13 +125,13 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 350px;
+  width: 300px;
 }
 
 .accordion-answer {
   font-size: 1rem;
-  margin-bottom: 20px;
-  width: 350px;
+  margin: 1rem 0;
+  width: 300px;
 }
 
 .accordion-button {
