@@ -15,63 +15,76 @@ import {
 } from "react-router-dom";
 import Videoplayer from "./components/video-player/VideoPlayer";
 import Bmi from "./components/bmi/Bmi";
+import { useState } from "react";
 
 function App() {
-  const router = createBrowserRouter(
-    createRoutesFromElements(
-      <Route path="/" element={<Root />}>
-        <Route index element={<Home />} />
-        <Route path="/imagecarousel" element={<ImageCarousel />} />
-        <Route path="/accordion" element={<Accordion />} />
-        <Route path="/quotegenerator" element={<QuoteGenerator />} />
-        <Route path="/shoppinglist" element={<ShoppingList />} />
-        <Route path="/github" element={<Github />} />
-        <Route path="/videoplayer" element={<Videoplayer />} />
-        <Route path="/bmi" element={<Bmi />} />
-      </Route>
-    )
+  const [show, setShow] = useState(true);
+  function handleShow() {
+    setShow(() => !show);
+  }
+  const routes = (
+    <Route path="/" element={<Root show={show} onShow={handleShow} />}>
+      <Route index element={<Home />} />
+      <Route path="/imagecarousel" element={<ImageCarousel />} />
+      <Route path="/accordion" element={<Accordion />} />
+      <Route path="/quotegenerator" element={<QuoteGenerator />} />
+      <Route path="/shoppinglist" element={<ShoppingList />} />
+      <Route path="/github" element={<Github />} />
+      <Route path="/videoplayer" element={<Videoplayer />} />
+      <Route path="/bmi" element={<Bmi />} />
+    </Route>
   );
 
+  const router = createBrowserRouter(createRoutesFromElements(routes));
+
   return (
-    <div className="app">
-      <RouterProvider router={router} />
+    <div>
+      <button className="hamburger-menu" onClick={handleShow}>
+        {show ? "-" : "+"}
+      </button>
+
+      <div className="app">
+        <RouterProvider router={router} />
+      </div>
     </div>
   );
 }
 
 export default App;
 
-function Root() {
+function Root({ show, onShow }) {
   return (
     <div>
-      <div className="router">
-        <div>
-          <Link className="router-link" to="/">
-            Home
-          </Link>
-          <Link className="router-link" to="/imagecarousel">
-            Images Carousel
-          </Link>
-          <Link className="router-link" to="/accordion">
-            Accordion
-          </Link>
-          <Link className="router-link" to="/quotegenerator">
-            Quote Generator
-          </Link>
-          <Link className="router-link" to="/shoppinglist">
-            Shopping List
-          </Link>
-          <Link className="router-link" to="/github">
-            Github User Search
-          </Link>
-          <Link className="router-link" to="/videoplayer">
-            Video Player
-          </Link>
-          <Link className="router-link" to="/bmi">
-            BMI Calculator
-          </Link>
+      {show && (
+        <div className="router">
+          <div>
+            <Link className="router-link" to="/" onClick={onShow}>
+              Home
+            </Link>
+            <Link className="router-link" to="/imagecarousel" onClick={onShow}>
+              Images Carousel
+            </Link>
+            <Link className="router-link" to="/accordion" onClick={onShow}>
+              Accordion
+            </Link>
+            <Link className="router-link" to="/quotegenerator" onClick={onShow}>
+              Quote Generator
+            </Link>
+            <Link className="router-link" to="/shoppinglist" onClick={onShow}>
+              Shopping List
+            </Link>
+            <Link className="router-link" to="/github" onClick={onShow}>
+              Github User Search
+            </Link>
+            <Link className="router-link" to="/videoplayer" onClick={onShow}>
+              Video Player
+            </Link>
+            <Link className="router-link" to="/bmi" onClick={onShow}>
+              BMI Calculator
+            </Link>
+          </div>
         </div>
-      </div>
+      )}
       <div>
         <Outlet />
       </div>

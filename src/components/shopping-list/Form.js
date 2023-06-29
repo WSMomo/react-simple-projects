@@ -20,7 +20,7 @@ export function Form({ onAddItem }) {
         placeholder="Add a new item"
         onChange={handleChange}
       />
-      <button className="shopping-list-button">Add</button>
+      <button className="shopping-list-button add-button">Add</button>
     </form>
   );
 }
