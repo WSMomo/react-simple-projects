@@ -33,7 +33,7 @@
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  margin-top: 300px;
+  margin-top: 400px;
 }
 
 @media screen and (min-width: 600px) {
@@ -308,4 +308,40 @@
 .video {
   margin-top: 30px;
   border-radius: 8px;
+}
+
+/* BMI calculator */
+.bmi-container {
+  background-color: var(--main-color);
+  color: var(--secondary-color);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.bmi-range-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.bmi-result {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 10px;
+}
+
+.bmi-result p {
+  background-color: var(--secondary-color);
+  color: var(--main-color);
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.range-input {
+  color: var(--secondary-color);
+  accent-color: var(--detail-color);
 }

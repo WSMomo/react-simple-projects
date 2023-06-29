@@ -14,6 +14,7 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import Videoplayer from "./components/video-player/VideoPlayer";
+import Bmi from "./components/bmi/Bmi";
 
 function App() {
   const router = createBrowserRouter(
@@ -23,20 +24,16 @@ function App() {
         <Route path="/imagecarousel" element={<ImageCarousel />} />
         <Route path="/accordion" element={<Accordion />} />
         <Route path="/quotegenerator" element={<QuoteGenerator />} />
-        <Route path="shoppinglist" element={<ShoppingList />} />
-        <Route path="github" element={<Github />} />
-        <Route path="videoplayer" element={<Videoplayer />} />
+        <Route path="/shoppinglist" element={<ShoppingList />} />
+        <Route path="/github" element={<Github />} />
+        <Route path="/videoplayer" element={<Videoplayer />} />
+        <Route path="/bmi" element={<Bmi />} />
       </Route>
     )
   );
 
   return (
     <div className="app">
-      {/* <ImageCarousel /> */}
-      {/* <Accordion /> */}
-      {/* <QuoteGenerator /> */}
-      {/* <ShoppingList /> */}
-      {/* <Github /> */}
       <RouterProvider router={router} />
     </div>
   );
@@ -69,6 +66,9 @@ function Root() {
           </Link>
           <Link className="router-link" to="/videoplayer">
             Video Player
+          </Link>
+          <Link className="router-link" to="/bmi">
+            BMI Calculator
           </Link>
         </div>
       </div>
