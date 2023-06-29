@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { GithubUserInfo } from "./GithubUserInfo";
 
 const URL = "https://api.github.com/users/";
 export default function Github() {
@@ -33,7 +34,7 @@ export default function Github() {
       {console.log(user)}
       <h1 className="title">Github User Search</h1>
       <GithubForm onSubmit={handleSubmit} onChange={handleChange} />
-      {user && <GithubUserInfo user={user} />}
+      {user.login && <GithubUserInfo user={user} />}
     </div>
   );
 }
@@ -44,32 +45,5 @@ function GithubForm({ onSubmit, onChange }) {
       <input className="github-search-input" type="text" onChange={onChange} />
       <button className="github-search-button">Search</button>
     </form>
-  );
-}
-
-function GithubUserInfo({ user }) {
-  return (
-    <div className="github-user-container">
-      <a href={user.html_url} target="_blank" rel="noreferrer">
-        <img
-          className="github-user-pic"
-          src={user.avatar_url}
-          alt={user.login}
-        />
-      </a>
-      <div className="github-user-info">
-        {user.name && <div>Name: {user.name}</div>}
-        {user.login && (
-          <div>
-            Username: <span>{user.login}</span>
-          </div>
-        )}
-        {user.blog && (
-          <div>
-            Blog: <a href={user.blog}>Visit {user.login} website</a>
-          </div>
-        )}
-      </div>
-    </div>
   );
 }

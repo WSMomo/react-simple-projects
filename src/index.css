@@ -1,14 +1,69 @@
+:root {
+  --main-color: rgb(0, 0, 126);
+  --secondary-color: rgb(255, 255, 255);
+  --detail-color: rgb(255, 174, 0);
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+.router {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--detail-color);
+  padding: 20px;
+}
+.router-link {
+  display: block;
+  text-align: center;
+  background-color: var(--secondary-color);
+  color: var(--main-color);
+  text-decoration: none;
+  padding: 5px;
+  margin: 5px;
+  border-radius: 5px;
+}
+
 .app {
   display: flex;
   justify-content: center;
-  align-items: center;
-  height: 100vh;
+  align-items: flex-start;
+  margin-top: 200px;
+}
+
+@media screen and (min-width: 600px) {
+  .router {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    min-height: fit-content;
+    background-color: var(--main-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 20px;
+  }
+
+  .router-link {
+    display: inline;
+    background-color: var(--secondary-color);
+    color: var(--main-color);
+    text-decoration: none;
+    padding: 5px;
+    margin: 10px;
+    border-radius: 5px;
+  }
+
+  .app {
+    margin-top: 100px;
+  }
 }
 
 .title {
@@ -43,7 +98,7 @@
   height: 50px;
   width: 50px;
   border: none;
-  background-color: white;
+  background-color: var(--secondary-color);
   opacity: 0.6;
   cursor: pointer;
 }
@@ -57,17 +112,17 @@
 /* accordion */
 
 .accordion-container {
-  background-color: rgb(0, 0, 126);
+  background-color: var(--main-color);
   padding: 20px;
   border-radius: 10px;
 }
 
 .accordion-title {
-  color: white;
+  color: var(--secondary-color);
 }
 
 .accordion-faq {
-  background-color: white;
+  background-color: var(--secondary-color);
   margin-bottom: 10px;
   padding: 10px 30px;
   border-radius: 8px;
@@ -88,8 +143,8 @@
 }
 
 .accordion-button {
-  border: 1px solid rgb(0, 0, 126);
-  color: rgb(0, 0, 126);
+  border: 1px solid var(--main-color);
+  color: var(--main-color);
   background-color: rgb(222, 222, 255);
   padding: 4px 8px;
   border-radius: 4px;
@@ -99,8 +154,8 @@
 /* Quote Generator */
 .quote-container {
   width: 350px;
-  background-color: rgb(0, 0, 126);
-  color: white;
+  background-color: var(--main-color);
+  color: var(--secondary-color);
   padding: 20px;
   border-radius: 10px;
 }
@@ -111,8 +166,8 @@
 }
 
 .quote-button {
-  background-color: rgb(255, 174, 0);
-  color: rgb(0, 0, 126);
+  background-color: var(--detail-color);
+  color: var(--main-color);
   border: none;
   padding: 5px 10px;
   border-radius: 5px;
@@ -128,14 +183,14 @@
   align-items: center;
   flex-direction: column;
   width: 350px;
-  background-color: rgb(0, 0, 126);
-  color: white;
+  background-color: var(--main-color);
+  color: var(--secondary-color);
   border-radius: 10px;
   padding: 10px;
 }
 
 .shopping-list-form {
-  background-color: white;
+  background-color: var(--secondary-color);
   padding: 5px 10px;
   border-radius: 5px;
   width: 250px;
@@ -156,16 +211,16 @@
   align-items: center;
 
   width: 230px;
-  background-color: white;
-  color: rgb(0, 0, 126);
+  background-color: var(--secondary-color);
+  color: var(--main-color);
   padding: 5px 10px;
   margin-bottom: 10px;
   border-radius: 5px;
 }
 
 .shopping-list-button {
-  background-color: rgb(0, 0, 126);
-  color: white;
+  background-color: var(--main-color);
+  color: var(--secondary-color);
   padding: 5px 10px;
   border-radius: 5px;
   border: none;
@@ -176,8 +231,8 @@
 
 .github-container {
   width: 350px;
-  background-color: rgb(0, 0, 126);
-  color: white;
+  background-color: var(--main-color);
+  color: var(--secondary-color);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -186,8 +241,8 @@
   border-radius: 10px;
 }
 .github-form-container {
-  background-color: white;
-  color: rgb(0, 0, 126);
+  background-color: var(--secondary-color);
+  color: var(--main-color);
   padding: 5px 10px;
   border-radius: 5px;
 }
@@ -199,8 +254,8 @@
 
 .github-search-button {
   border: none;
-  background-color: rgb(0, 0, 126);
-  color: white;
+  background-color: var(--main-color);
+  color: var(--secondary-color);
   padding: 5px 10px;
   border-radius: 5px;
   cursor: pointer;
@@ -221,8 +276,8 @@
 }
 
 .github-user-info {
-  background-color: white;
-  color: rgb(0, 0, 126);
+  background-color: var(--secondary-color);
+  color: var(--main-color);
   padding: 10px;
   border-radius: 5px;
 }
