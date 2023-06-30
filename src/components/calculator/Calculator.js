@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Buttons } from "./Buttons";
 
 export default function Calculator() {
