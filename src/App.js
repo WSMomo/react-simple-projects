@@ -16,6 +16,7 @@ import {
 import Videoplayer from "./components/video-player/VideoPlayer";
 import Bmi from "./components/bmi/Bmi";
 import { useState } from "react";
+import Calculator from "./components/calculator/Calculator";
 
 function App() {
   const [show, setShow] = useState(true);
@@ -32,6 +33,7 @@ function App() {
       <Route path="/github" element={<Github />} />
       <Route path="/videoplayer" element={<Videoplayer />} />
       <Route path="/bmi" element={<Bmi />} />
+      <Route path="/calculator" element={<Calculator />} />
     </Route>
   );
 
@@ -81,6 +83,9 @@ function Root({ show, onShow }) {
             </Link>
             <Link className="router-link" to="/bmi" onClick={onShow}>
               BMI Calculator
+            </Link>
+            <Link className="router-link" to="/calculator" onClick={onShow}>
+              Calculator
             </Link>
           </div>
         </div>
