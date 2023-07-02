@@ -397,3 +397,21 @@
   grid-column: span 2;
   aspect-ratio: 2/1;
 }
+
+/* Weather */
+.weather-container {
+  background-color: var(--main-color);
+  color: var(--secondary-color);
+  width: 350px;
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.weather-input {
+  padding: 10px;
+  border-radius: 5px;
+}
